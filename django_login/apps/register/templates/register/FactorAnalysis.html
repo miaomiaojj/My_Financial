@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FactorAnalysis</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'register/style.css' %}">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8">
+				<div class="alert alert-success" role="alert'">
+                    <p><strong>Step 1：Please select dataset for analysis</strong></p>
+
+                   <select name = "dropdown">
+                {% for Dataset in Dataset_list %}
+                    <option value = "{{ Dataset }}">{{ Dataset }}</option>
+                {%  endfor %}
+
+            </select>
+				</div>
+			</div>
+		</div>
+</div>
+</body>
+</html>

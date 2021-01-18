@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Success</title>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'register/style.css' %}">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8">
+				<div class="alert alert-success" role="alert'">
+
+                        <p>Welcome <strong>{{user.first_name}} {{user.last_name}}</strong>, please key in information</p>
+					 <p> <strong>{{MonthlyState}}</strong></p>
+							   <p>{{MonthlyIncome}} {{Num_monthly_Income}}</p>
+							   <p>{{MonthlyExpense}} {{Num_MonthlyExpense}}</p>
+							   <p>{{MonthlyBalance}} {{Num_MonthlyBalance}}</p>
+					<strong>  <p>{{Personal_balance_statement}}</p></strong>
+							   <p>{{Asset}} {{Num_Asset}}</p>
+							   <p>{{liabilities}} {{Num_liabilities}}</p>
+							   <p>{{Networth}} {{Num_Networth}}</p>
+					<strong>   <p>{{Suggestion}} </p></strong>
+							   <p>{{Summary1}} </p>
+							   <p>{{Summary2}} </p>
+
+					  <form method="post" action="/FactorAnalysis">
+						       {% csrf_token %}
+
+                            <div class="mx-auto text-center">
+                                <input type="submit" id="GoFactorAnalysis" value= "{{GoFactorAnalysis}}" class="btn btn-primary" {{hidden}}>
+                            </div>
+                        </form>
+				</div>
+			</div>
+		</div>
+
+
+			<form method="post" action="/userinfocollect">
+							   {% csrf_token %}
+				<div class="card" >
+                    <h4 class="card-header text-center">User Information</h4>
+
+                      <div class="card-block">
+						  <div class="test_temp" style="width:48%; height: 90px; float:left;">
+							  <div class="test_temp" style="width:48%; height: 90px; float:left;">
+							  <div class="form-group">
+							   <label>age</label><br>
+							   <input type="number"  name="age" value="27" class="form-control">
+								   </div>
+							  </div>
+								  <div class="test_temp" style="width:50%; height: 90px; float:right;">
+								  <div class="form-group">
+							      <label>education</label><br>
+								 <input name="education" value="Degree" class="form-control">
+								  </div>
+								  </div>
+						  </div>
+
+						  <div class="test_temp" style="width:50%; height: 90px; float:right;">
+
+
+							 <div class="test_temp" style="width:48%; height: 90px; float:left;">
+								 <div class="form-group">
+
+							  <label>location</label><br>
+							   <input name="location" value="Singapore" class="form-control">
+
+
+						   </div>
+						  </div>
+						  <div class="test_temp" style="width:50%; height: 90px; float:right;">
+							  <div class="form-group">
+
+							  <label>houseInfo</label><br>
+							  <input name="houseInfo" value="House owner" class="form-control">
+
+
+						   </div>
+						  </div>
+						  </div>
+						  <div class="test_temp" style="width:48%; height: 90px; float:left;">
+							  <div class="form-group">
+
+							  <label>Maritalstatus</label><br>
+							  <input name="Maritalstatus" value="Married" class="form-control">
+
+						     </div>
+							  </div>
+						  <div class="test_temp" style="width:50%; height: 90px; float:right;">
+
+						     <div class="form-group">
+							  <label>Occupation</label><br>
+
+								<input name="Occupation" value="employed" class="form-control">
+							 </div>
+						  </div>
+
+						 <div class="test_temp" style="width:48%; height: 120px; float:left;">
+
+				            <div class="form-group">
+							   <p style="font-family:verdana">------Monthly Income-----</p>
+
+						     </div>
+						   <div class="test_temp" style="width:48%; height: 90px; float:left;">
+						     <div class="form-group">
+							  <label>Monthy Salary</label><br>
+								 <input type="number" id="monthySalary" name="monthySalary" value="4000" class="form-control" >
+							 </div>
+						   </div>
+						   <div class="test_temp" style="width:50%; height: 90px; float:right;">
+
+						     <div class="form-group">
+							  <label>Other Monthly Income</label><br>
+
+							  <input type="number" id="OtherMonthlyIncome" name="OtherMonthlyIncome" value="2000" class="form-control">
+						     </div>
+							   </div>
+						 </div>
+
+						  <div class="test_temp" style="width:50%; height: 120px; float:right;">
+						     <div class="form-group">
+        					   <p style="font-family:verdana">---------Assets-------</p>
+
+						     </div>
+							  <div class="test_temp" style="width:62%; height: 90px; float:left;">
+
+						   <div class="test_temp" style="width:48%; height: 90px; float:left;">
+						     <div class="form-group">
+							  <label>Saving Balance</label><br>
+							  <input type="number" id="SavingBalance" name="SavingBalance" value="50000" class="form-control">
+						     </div>
+							   </div>
+						   <div class="test_temp" style="width:50%; height: 90px; float:right;">
+						     <div class="form-group">
+							  <label>Investment</label><br>
+							  <input type="number" id="Investment" name="Investment" value="20000" class="form-control">
+						     </div>
+						   </div>
+						  </div>
+							  <div class="test_temp" style="width:36%; height: 90px; float:right;">
+
+						     <div class="form-group">
+							   <label>Property</label><br>
+							   <input type="number" id="Property" name="Property" value="20000" class="form-control">
+						     </div>
+							  </div>
+						  </div>
+
+
+
+
+						  <div class="form-group">
+		                     <p style="font-family:verdana">---------Liabilities-------</p>
+
+						     </div>
+
+
+
+					    	<div class="form-group">
+							  <label>Credit Card Liabilities</label><br>
+							  <input type="number" id="CreditCardLiabilities" name="CreditCardLiabilities" value="20000" class="form-control">
+						    </div>
+
+						    <div class="form-group">
+						    	<label>Home Mortgage</label><br>
+						    	<input type="number" id="HomeMortgage" name="HomeMortgage" value="30000" class="form-control">
+						    </div>
+
+
+						    <div class="form-group">
+							   <label>Other Loan</label><br>
+							   <input type="number" id="OtherLoan" name="OtherLoan" value="20000" class="form-control" >
+						    </div>
+
+
+							  <div class="form-group">
+							    <p style="font-family:verdana">---------Monthly Spend-------</p>
+						      </div>
+							  <div class="form-group">
+							    <label>Food Spend</label><br>
+							    <input type="number" id="Foodspend" name="Foodspend" value="500" class="form-control">
+						     </div>
+						     <div class="form-group">
+						     	<label>Clothing Spend</label><br>
+							    <input type="number" id="clothingspend" name="clothingspend" value="400" class="form-control">
+						    </div>
+					    	<div class="form-group">
+							   <label>Shopping</label><br>
+							   <input type="number" id="shopping" name="shopping" value="600" class="form-control">
+						    </div>
+						    <div class="form-group">
+							   <label>Accommodation</label><br>
+							   <input type="number" id="accommodation" name="accommodation" value="1000" class="form-control">
+						    </div>
+						    <div class="form-group">
+							    <label>Transport</label><br>
+							    <input type="number" id="Transport" name="Transport" value="300" class="form-control">
+						    </div>
+						    <div class="form-group">
+							    <label>Others Monthly Spend</label><br>
+							    <input type="number" id="othersMonthlyspend" name="othersMonthlyspend" value="1000" class="form-control">
+						    </div>
+						    <div class="mx-auto text-center">
+							     <input type="submit" value="UserInfoCollect" class="btn btn-primary">
+						    </div>
+						    <div class="mx-auto text-center">
+							    <label>{{InfoSaveMassage}}</label><br>
+						    </div>
+
+				</div>
+				</div>
+					</form>
+				</div>
+</body>
+
+</html>
